@@ -1,3 +1,5 @@
+wget  https://raw.githubusercontent.com/Yenthe666/InstallScript/10.0/odoo_install.sh
+
 mkdir localizacao
 cd localizacao
 sudo git clone https://github.com/oca/account-fiscal-rule.git --branch 10.0 --depth 1
