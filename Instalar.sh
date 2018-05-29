@@ -64,7 +64,7 @@ echo -e "\n---- Install tool packages ----"
 sudo apt-get install wget git python-pip gdebi-core -y
 
 echo -e "\n---- Install python packages ----"
-sudo apt-get install pytrustnfe python-boleto python-cnab python-dateutil python-feedparser python-ldap python-libxslt1 python-lxml python-mako python-openid python-psycopg2 python-pybabel python-pychart python-pydot python-pyparsing python-reportlab python-simplejson python-tz python-vatnumber python-vobject python-webdav python-werkzeug python-xlwt python-yaml python-zsi python-docutils python-psutil python-mock python-unittest2 python-jinja2 python-pypdf python-decorator python-requests python-passlib python-pil -y python-suds 
+sudo apt-get install python-dateutil python-feedparser python-ldap python-libxslt1 python-lxml python-mako python-openid python-psycopg2 python-pybabel python-pychart python-pydot python-pyparsing python-reportlab python-simplejson python-tz python-vatnumber python-vobject python-webdav python-werkzeug python-xlwt python-yaml python-zsi python-docutils python-psutil python-mock python-unittest2 python-jinja2 python-pypdf python-decorator python-requests python-passlib python-pil -y python-suds
 
 echo -e "\n---- Install python libraries ----"
 sudo pip install gdata psycogreen ofxparse XlsxWriter xlrd
@@ -264,39 +264,3 @@ echo "Start Odoo service: sudo service $OE_CONFIG start"
 echo "Stop Odoo service: sudo service $OE_CONFIG stop"
 echo "Restart Odoo service: sudo service $OE_CONFIG restart"
 echo "-----------------------------------------------------------"
-
-
-
-mkdir localizacao
-cd localizacao
-git clone https://github.com/oca/account-fiscal-rule.git --branch 10.0 --depth 1
-git clone https://github.com/odoo-brazil/odoo-brazil-eletronic-documents.git --branch 10.0 --depth 1
-git clone https://github.com/OCA/server-tools --branch 10.0 --depth 1
-cd ..
-mkdir trust
-cd trust
-git clone https://github.com/Trust-Code/odoo-brasil.git --branch 10.0 --depth 1
-git clone https://github.com/Trust-Code/trustcode-addons.git --branch 10.0 --depth 1
-exit
-mkdir dependencias
-git clone https://github.com/odoo-brazil/PySPED.git --branch 8.0
-cd PySPED
-sudo python setup.py install
-mkdir dependencias
-cd dependencias
-git clone https://github.com/odoo-brazil/PySPED.git --branch 8.0
-cd PySPED
-sudo python setup.py instal
-git clone https://github.com/odoo-brazil/pyxmlsec --branch master
-cd pyxmlsec
-sudo python setup.py install
-
-cd /opt
-
-sudo mkdir nfe
-sudo mkdir nfe/import
-sudo mkdir nfe/export
-sudo mkdir nfe/backup
-sudo chown -R odoo:odoo nfe
-
-
